@@ -1,0 +1,41 @@
+.wrapper{
+/* ekranın tam boyutunu kullanmak için */
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+}
+
+
+.movie-list{background-color: red; flex: 1; }
+.movie-summary{background-color: blue; flex: 2;}
+.movie-favList{background-color: yellow; flex: 1;}
+
+.movie-list h2{
+  color: white;
+}
+
+.movie-list ul{
+  padding: 10px;
+}
+
+.movie-item{
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+  background-color: rgb(182, 239, 182);
+}
+
+.movie-item:last-child{
+  margin-bottom: 0;
+}
+
+.movie-item img{
+  width: 100px;
+}
+
+.movie-info{
+  flex: 2;
+}
