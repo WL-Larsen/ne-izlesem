@@ -9,6 +9,7 @@ import MovieItem from './components/MovieItem'
 
 function App() {
 const[movies, setMovies] = useState([])
+const[preview, setPreview] = useState([])
 
 useEffect(()=>{
   //request gönder
@@ -34,10 +35,12 @@ useEffect(()=>{
     <h2>Movie List</h2>
     <ul >
       {movies.map((movie) => 
-      (<MovieItem key={movie.id} movieData={movie}/>))}
+      (<MovieItem key={movie.id} movieData={movie} handlePreview = {()=> setPreview(movie)} />))}
     </ul>
   </div>
-  <div className='movie-summary'></div>
+  <div className='movie-summary'>
+    {preview ? <div>{preview.name}</div> : "Dizi Seç" }
+  </div>
   <div className='movie-favList'></div>
   </div>
   )

@@ -60,6 +60,26 @@
 }
 
 
+button{
+   background-color: #000000;
+   color: white;
+   border: 0;
+   padding: 0 1rem;
+   height: 36px;
+   cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(215, 179, 18);
+  color: rgb(123, 7, 7);
+}
+
+
+
+
+
+
+
 
 /* width */
 ::-webkit-scrollbar {
