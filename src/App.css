@@ -7,25 +7,44 @@
 }
 
 
-.movie-list{background-color: red; flex: 1; }
-.movie-summary{background-color: blue; flex: 2;}
-.movie-favList{background-color: yellow; flex: 1;}
+.movie-list{
+  background-color: black; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; 
+}
+
+
+.movie-summary{
+  background-color: blue; 
+  flex: 2;
+}
+
+
+.movie-favList{
+  background-color: yellow; 
+  flex: 1;
+}
+
 
 .movie-list h2{
-  color: white;
-}
+  color: white;}
+  
 
 .movie-list ul{
   padding: 10px;
+  flex: 1;
+  overflow: auto;
 }
 
 .movie-item{
   display: flex;
-  color: white;
+  color: black;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 10px;
-  background-color: rgb(182, 239, 182);
+  background-color:white;
 }
 
 .movie-item:last-child{
@@ -38,4 +57,26 @@
 
 .movie-info{
   flex: 2;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -1,32 +1,40 @@
+import { useState } from 'react'
 import './App.css'
+import { useEffect } from 'react'
+import axios from 'axios'
+import MovieItem from './components/MovieItem'
+
+
+
 
 function App() {
+const[movies, setMovies] = useState([])
+
+useEffect(()=>{
+  //request gönder
+  //gelen cevabı konsola yazdır
+  //state ekle
+  axios
+  .get("https://www.episodate.com/api/most-popular?page=1")
+  //veri çekeceğimiz için get kullandık.
+  .then((res)=>{
+    console.log(res.data.tv_shows)
+    setMovies(res.data.tv_shows)
+  
+  })
+  .catch((err)=>{console.log(err)})
+  .finally(()=>{console.log("request tamamlandı")})
+
+},[])
+
+
   return (
   <div className='wrapper'>
   <div className='movie-list'>
     <h2>Movie List</h2>
-    <ul>
-      <li className='movie-item'>
-        <img src="https://static.episodate.com/images/tv-show/thumbnail/23455.jpg" alt="" />
-        <div className='movie-info'>
-        <h3>Game of thrones</h3>
-        <button>Özet</button>
-        </div>
-      </li>
-      <li className='movie-item'>
-        <img src="https://static.episodate.com/images/tv-show/thumbnail/23455.jpg" alt="" />
-        <div className='movie-info'>
-        <h3>Game of thrones</h3>
-        <button>Özet</button>
-        </div>
-      </li>
-      <li className='movie-item'>
-        <img src="https://static.episodate.com/images/tv-show/thumbnail/23455.jpg" alt="" />
-        <div className='movie-info'>
-        <h3>Game of thrones</h3>
-        <button>Özet</button>
-        </div>
-      </li>
+    <ul >
+      {movies.map((movie) => 
+      (<MovieItem key={movie.id} movieData={movie}/>))}
     </ul>
   </div>
   <div className='movie-summary'></div>
