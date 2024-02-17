@@ -19,6 +19,9 @@
 .movie-summary{
   background-color: blue; 
   flex: 2;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
 }
 
 
@@ -75,8 +78,24 @@ button:hover{
 }
 
 
+.pick-one{
+  background-color: black;
+  color: white;
+  flex:1;
+  padding: 5px;
+  align-items: center;
+  font-size: 1.5rem;
+}
 
+.details-wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
+}
 
 
 
